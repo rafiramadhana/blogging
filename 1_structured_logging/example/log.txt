@@ -1,0 +1,6 @@
+{"request_id":"q5XhRI","user_id":"1","message":"Pay book","level":"INFO"}
+{"request_id":"q5XhRI","user_id":"1","message":"pay book success","level":"INFO"}
+{"request_id":"wrgHOx","user_id":"2","message":"Pay book","level":"INFO"}
+{"request_id":"wrgHOx","user_id":"2","message":"Pay book failed","level":"ERROR"}
+{"request_id":"Xq3F0s","user_id":"1","message":"Add book to cart","level":"INFO"}
+{"request_id":"Xq3F0s","user_id":"1","message":"Add book to cart success","level":"INFO"}
