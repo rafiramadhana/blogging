@@ -33,7 +33,7 @@ With a specific format like JSON, we can utilise tools like `jq` to do data quer
 
 As mentioned, one of the benefits of structured logging is easier data query. Here, we are going to use `jq` to do data query.
 
-Consider we are having these logs (see [log.txt](./log.txt))
+Consider we are having these logs (see [log.txt](./asset/log.txt))
 
 ```
 {"request_id":"q5XhRI","user_id":"1","message":"Pay book","level":"INFO"}
