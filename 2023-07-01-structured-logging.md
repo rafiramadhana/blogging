@@ -47,7 +47,7 @@ Consider we are having these logs
 To check for a failed request, we can do
 
 ```
-➜  example git:(main) ✗ cat log.txt | jq '. | select(.level == "ERROR")'
+$ cat log.txt | jq '. | select(.level == "ERROR")'
 {
   "request_id": "wrgHOx",
   "user_id": "2",
@@ -59,7 +59,7 @@ To check for a failed request, we can do
 Then, we can proceed to check for the corresponding request with ID `wrgHOx`.
 
 ```
-➜  example git:(main) ✗ cat log.txt | jq '. | select(.request_id == "wrgHOx")'
+$ cat log.txt | jq '. | select(.request_id == "wrgHOx")'
 {
   "request_id": "wrgHOx",
   "user_id": "2",
@@ -77,7 +77,7 @@ Then, we can proceed to check for the corresponding request with ID `wrgHOx`.
 As another example, let's try to check for all requests done by `user_id` of `1`
 
 ```
-➜  example git:(main) ✗ cat log.txt | jq '. | select(.user_id == "1")'
+$ cat log.txt | jq '. | select(.user_id == "1")'
 {
   "request_id": "q5XhRI",
   "user_id": "1",
