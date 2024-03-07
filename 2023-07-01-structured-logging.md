@@ -47,61 +47,26 @@ Consider we are having these logs
 To check for a failed request, we can do
 
 ```
-$ cat log.txt | jq '. | select(.level == "ERROR")'
-{
-  "request_id": "wrgHOx",
-  "user_id": "2",
-  "message": "Pay book failed",
-  "level": "ERROR"
-}
+$ cat log.txt | jq -c '. | select(.level == "ERROR")'
+{"request_id":"wrgHOx","user_id":"2","message":"Pay book failed","level":"ERROR"}
 ```
 
 Then, we can proceed to check for the corresponding request with ID `wrgHOx`.
 
 ```
-$ cat log.txt | jq '. | select(.request_id == "wrgHOx")'
-{
-  "request_id": "wrgHOx",
-  "user_id": "2",
-  "message": "Pay book",
-  "level": "INFO"
-}
-{
-  "request_id": "wrgHOx",
-  "user_id": "2",
-  "message": "Pay book failed",
-  "level": "ERROR"
-}
+$ cat log.txt | jq -c '. | select(.request_id == "wrgHOx")'
+{"request_id":"wrgHOx","user_id":"2","message":"Pay book","level":"INFO"}
+{"request_id":"wrgHOx","user_id":"2","message":"Pay book failed","level":"ERROR"}
 ```
 
 As another example, let's try to check for all requests done by `user_id` of `1`
 
 ```
-$ cat log.txt | jq '. | select(.user_id == "1")'
-{
-  "request_id": "q5XhRI",
-  "user_id": "1",
-  "message": "Pay book",
-  "level": "INFO"
-}
-{
-  "request_id": "q5XhRI",
-  "user_id": "1",
-  "message": "pay book success",
-  "level": "INFO"
-}
-{
-  "request_id": "Xq3F0s",
-  "user_id": "1",
-  "message": "Add book to cart",
-  "level": "INFO"
-}
-{
-  "request_id": "Xq3F0s",
-  "user_id": "1",
-  "message": "Add book to cart success",
-  "level": "INFO"
-}
+$ cat log.txt | jq -c '. | select(.user_id == "1")'
+{"request_id":"q5XhRI","user_id":"1","message":"Pay book","level":"INFO"}
+{"request_id":"q5XhRI","user_id":"1","message":"pay book success","level":"INFO"}
+{"request_id":"Xq3F0s","user_id":"1","message":"Add book to cart","level":"INFO"}
+{"request_id":"Xq3F0s","user_id":"1","message":"Add book to cart success","level":"INFO"}
 ```
 
 This only one of the many benefits of having a strucured logging. We might unlock more benefits by providing fields, such as, `timestamp` or `http_status`.
